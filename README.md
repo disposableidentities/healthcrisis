@@ -253,7 +253,7 @@ See attribute “dataSubjectData” which contains a link to such public health 
 		"https://www.w3.org/2018/credentials/v1",
 		"https://disposables.id/context.jsonld"
 	],
-	"id": "http://disposables.id/vc/010",
+	"id": "uri:disposables-id:datalink:000011",
 	"type": [
 		"VerifiableCredential",
 		"CitizenHealthMessageCredential"
