@@ -36,6 +36,18 @@ Who gets what **benefit**? Color coding people on health conditions is just a pr
 * Show a path of spreading the virus and predict who is going to be impacted next based on who was at which location or was in contact with whom? (B2C view for Govt to check scale of virus spread and plan mitigation) 
 * There is a 3rd view for the healthcare provider to understand when a patient shows up with a symptom, to be able to make a decision (via an AI) whether this person should be given the expensive test kit over other patients who might be at higher risk from the virus. This is futuristic thinking - There may be value from the data trail that can be shared transparently across regions/countries to develop learning patterns for disease control/virus spreading contamination strategies.
 
+# Disposable Identity Definition
+
+This definition is taking from the forthcoming publication: DISPOSABLE IDENTITIES?  Why digital identity matters to blockchain disintermediation and for society. Authors: Loretta Anania, EC Gaelle Le Gars, Rob van Kranenburg. The authors are linked to H2020 ICT Grant Agreement 825652 NGI FORWARD.
+
+Disposable identities are temporary attribute-based identities integrated in any smart contract between a receiver and a supplier. A digital context-based sharing of data that is generalizable: to apply a digital id internet layer to any existing communication service.
+
+The complete ecosystem in which Disposable Identities would operate, requires a similar trust infrastructure where the the combination of seamless connectivity and personalized support is not build on continuous and real-time tracking and tracing of identified users. Instead it operates with attribute-based relational identities, generated for each single interaction between user and service (or object and service) and disposed of, immediately afterwards.
+
+With disposable identities, new applications can be added to this ecosystem using a strict attribute-based solution, needs no full disclosure (of identity) just beyond age, ability to pay for the service, legal compliance in terms of insurance and accountability. Digital services can be delivered to authenticated users without requiring the need for a single full set of identifying data to be shared.
+
+This schema minimizes risks of data leaks and unauthorized reuse of personal data by third party service providers. The proposed technical framework of provable computing developed by zenroom.org, runs on Virtual Machines embedded in the chip used with any personal communication device and any connected object . These chips representing the key material component of the approach, they could be regarded as the digital era equivalent of the secure ID of Passport and require comparable level of confidence in the fabrication process. This argues in favour of relying on chips manufactured under EU jurisdiction. While this represents a major change from the current supply chain for commercial chips which are almost entirely sourced from China for the EU market, it is also a move that may serve other geopolitical and environmental Commission priorities. Zenroom, which can also runs on existing integrated chips, was developed as European alternative for achieving a level of accessibility, provability and certification of computing.
+
 ## Technicalities
 
 ### Standards
