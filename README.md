@@ -181,14 +181,59 @@ Markers: To be able to work with markers project will create it’s own open-sou
 	"proof": {
 		"type": "Ed25519Signature2018",
 		"created": "2020-01-23T05:30:04Z",
-		"creator": "did:EU:some-registered-organisation-DID-0001#keys-1",
+		"creator": "did:disposable:some-person-disposable-DID-001#keys-1",
 		"signatureValue": "I9+XPel4g4NnYlY+1/7mRh7BLhlKV8L+iIgb9UCuGFf61i5Yc4l8/LqgNFsMb1KWU2wjtYVw/QAFnGv4gZC6B+Rem9RRNVOWiXmd1X7Z874dZBtUqUTfCXb9U3+ZzZ402xg4Uermq4yFLD9sezji8IYMZN/TRQbMZ5KxTGvgCGXNMZGcZkmqj3CIsL3/aWERMsYCZKe0tUODpQ6rRA8HxztUwQ0p3lXrX/1m8tE3VVh7W1kbkaEF9mfqJi2af/ItfK6dLPnR66XCQ2qWffL/TSVmRHLRi5w3d6AUhegDFPZS2UN0EcJY6VQi4LcrxYrQ0d8XmkLSRAYyOv5qfhDOeg=="
 	}
 }
 ```
 
 **Example Consent Verifiable Credential (issued by a practitioner) for the health risk data**
-(will be added soon)
+
+See attribute “dataSubjectData” which contains a link to such public health risk message.
+
+```json
+{
+	"@context": [
+		"https://www.w3.org/2018/credentials/v1",
+		"https://disposables.id/context.jsonld"
+	],
+	"id": "http://disposables.id/vc/02",
+	"type": [
+		"VerifiableCredential",
+		"UsageConsentCredential"
+	],
+	"issuer": "did:BE:some-registered-practitioner-DID-0001",
+	"issuanceDate": "2020-01-23T05:28:04Z",
+	"credentialSubject": {
+		"id": "did:disposable:some-person-disposable-DID-001",
+		"consent": {
+			"controllerDID": "did:BE:some-registered-practitioner-DID-0001",
+			"jurisdiction": "urn:gdpr:jurisdiction:BE",
+			"collectionMethod": "urn:gdpr:collectionmethod:mobileApp",
+			"language": "urn:gdpr:language:EN-UK",
+			"purposes": [
+				{
+					"purposeCategory": "urn:gdpr:purposecategory:health-registrationOfRisks",
+					"consentType": "urn:gdpr:consenttype:dataSubjectDigitalSignature",
+					"personalDataCategories": [
+						"urn:gdpr:personaldatacategorie:concerningHealth-disease"
+					],
+					"primaryPurpose": true
+				}
+			],
+			"consentDateStart": "2020-03-12T05:30:04Z",
+			"consentDateEnd": "2020-04-12T05:30:04Z",
+			"dataSubjectData": "uri:disposables-id:datalink:00001"
+		}
+	},
+	"proof": {
+		"type": "Ed25519Signature2018",
+		"created": "2020-01-23T05:30:04Z",
+		"creator": "did:disposable:some-person-disposable-DID-001#keys-1",
+		"signatureValue": "I9+XPel4g4NnYlY+1/7mRh7BLhlKV8L+iIgb9UCuGFf61i5Yc4l8/LqgNFsMb1KWU2wjtYVw/QAFnGv4gZC6B+Rem9RRNVOWiXmd1X7Z874dZBtUqUTfCXb9U3+ZzZ402xg4Uermq4yFLD9sezji8IYMZN/TRQbMZ5KxTGvgCGXNMZGcZkmqj3CIsL3/aWERMsYCZKe0tUODpQ6rRA8HxztUwQ0p3lXrX/1m8tE3VVh7W1kbkaEF9mfqJi2af/ItfK6dLPnR66XCQ2qWffL/TSVmRHLRi5w3d6AUhegDFPZS2UN0EcJY6VQi4LcrxYrQ0d8XmkLSRAYyOv5qfhDOeg=="
+	}
+}
+```
 
 **Citizens’ message**
 * Generic elements (part of standard VC):
@@ -201,10 +246,89 @@ Markers: To be able to work with markers project will create it’s own open-sou
 * Location of issuance
 
 **Example citizens’ message VC:**
-(will be added soon)
+
+```json
+{
+	"@context": [
+		"https://www.w3.org/2018/credentials/v1",
+		"https://disposables.id/context.jsonld"
+	],
+	"id": "http://disposables.id/vc/010",
+	"type": [
+		"VerifiableCredential",
+		"CitizenHealthMessageCredential"
+	],
+	"issuer": "did:disposable:some-person-disposable-DID-001",
+	"issuanceDate": "2020-01-23T05:28:04Z",
+	"credentialSubject": {
+		"id": "did:disposable:some-person-disposable-DID-001",
+		"observedHealthStatus": "uri:TODO:couching",
+		"riskSeverityLevel": "uri:TODO:veryFrequent",
+		"locationOfIssuance": {
+        			"type": "Point",
+        			"coordinates": [102.0, 0.5]
+        		},
+        		"freeText": "I'm worried"
+	},
+	"proof": {
+		"type": "Ed25519Signature2018",
+		"created": "2020-01-23T05:30:04Z",
+		"creator": "did:disposable:some-person-disposable-DID-001#keys-1",
+		"signatureValue": "I9+XPel4g4NnYlY+1/7mRh7BLhlKV8L+iIgb9UCuGFf61i5Yc4l8/LqgNFsMb1KWU2wjtYVw/QAFnGv4gZC6B+Rem9RRNVOWiXmd1X7Z874dZBtUqUTfCXb9U3+ZzZ402xg4Uermq4yFLD9sezji8IYMZN/TRQbMZ5KxTGvgCGXNMZGcZkmqj3CIsL3/aWERMsYCZKe0tUODpQ6rRA8HxztUwQ0p3lXrX/1m8tE3VVh7W1kbkaEF9mfqJi2af/ItfK6dLPnR66XCQ2qWffL/TSVmRHLRi5w3d6AUhegDFPZS2UN0EcJY6VQi4LcrxYrQ0d8XmkLSRAYyOv5qfhDOeg=="
+	}
+}
+```
 
 **Example Consent Verifiable Credential (self-issued by a citizen) for the health risk data to be used by government for crisis management purpose**
-(will be added soon)
+
+```json
+{
+	"@context": [
+		"https://www.w3.org/2018/credentials/v1",
+		"https://disposables.id/context.jsonld"
+	],
+	"id": "http://disposables.id/vc/100",
+	"type": [
+		"VerifiableCredential",
+		"UsageConsentCredential"
+	],
+	"issuer": "did:disposable:some-person-disposable-DID-001",
+	"issuanceDate": "2020-01-23T05:28:04Z",
+	"credentialSubject": {
+		"id": "did:disposable:some-person-disposable-DID-001",
+		"consent": {
+			"controllerDID": "did:EU:some-government-DID-0001",
+			"jurisdiction": "urn:gdpr:jurisdiction:BE",
+			"collectionMethod": "urn:gdpr:collectionmethod:WebAPI",
+			"language": "urn:gdpr:language:EN-UK",
+			"purposes": [
+				{
+					"purposeCategory": [
+						"urn:gdpr:purposecategory:health-registrationOfRisks", 
+						"urn:gdpr:purposecategory:research-epidemiologicResearch",
+						"urn:gdpr:purposecategory:justiceAndPolicy-publicSecurity"
+					],
+					"consentType": "urn:gdpr:consenttype:dataSubjectDigitalSignature",
+					"personalDataCategories": [
+					    "urn:gdpr:personaldatacategorie:concerningHealth-disease",
+					    "urn:gdpr:personaldatacategorie:locationData-GPS"
+					],
+					"primaryPurpose": true
+				}
+			],
+			"consentDateStart": "2020-01-23T05:30:04Z",
+			"consentDateEnd": "2021-01-23T05:30:04Z",
+			"dataSubjectData": "uri:disposables-id:datalink:00001"
+		}
+	},
+	"proof": {
+		"type": "Ed25519Signature2018",
+		"created": "2020-01-23T05:30:04Z",
+		"creator": "did:disposable:some-person-disposable-DID-001#keys-1",
+		"signatureValue": "I9+XPel4g4NnYlY+1/7mRh7BLhlKV8L+iIgb9UCuGFf61i5Yc4l8/LqgNFsMb1KWU2wjtYVw/QAFnGv4gZC6B+Rem9RRNVOWiXmd1X7Z874dZBtUqUTfCXb9U3+ZzZ402xg4Uermq4yFLD9sezji8IYMZN/TRQbMZ5KxTGvgCGXNMZGcZkmqj3CIsL3/aWERMsYCZKe0tUODpQ6rRA8HxztUwQ0p3lXrX/1m8tE3VVh7W1kbkaEF9mfqJi2af/ItfK6dLPnR66XCQ2qWffL/TSVmRHLRi5w3d6AUhegDFPZS2UN0EcJY6VQi4LcrxYrQ0d8XmkLSRAYyOv5qfhDOeg=="
+	}
+}
+```
 
 ### Visual interface on identity
 
