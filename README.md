@@ -155,7 +155,37 @@ Markers: To be able to work with markers project will create it’s own open-sou
 **(Call out to the community of practitioners/health experts to provide the correct codes/taxonomies.** https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30557-2/fulltext, referencing ICTV as an authoritative source)
 
 **Example health risk message/report VC:**
-(will be added soon)
+```json
+{
+	"@context": [
+		"https://www.w3.org/2018/credentials/v1",
+		"https://disposables.id/context.jsonld"
+	],
+	"id": "uri:disposables-id:datalink:00001",
+	"type": [
+		"VerifiableCredential",
+		"HealthRiskCredential"
+	],
+	"issuer": "did:BE:some-registered-practitioner-DID-0001",
+	"issuanceDate": "2020-01-23T05:28:04Z",
+	"credentialSubject": {
+		"id": "did:disposable:some-person-disposable-DID-001",
+		"publicHealthRiskType": "uri:ictv:SARS-CoV-2",
+		"riskSeverityLevel": "uri:TODO:green",
+		"illegibilityForTesting": "YES",
+		"locationOfIssuance": {
+        		      "type": "Point",
+        		      "coordinates": [102.0, 0.5]
+                                      }
+	},
+	"proof": {
+		"type": "Ed25519Signature2018",
+		"created": "2020-01-23T05:30:04Z",
+		"creator": "did:EU:some-registered-organisation-DID-0001#keys-1",
+		"signatureValue": "I9+XPel4g4NnYlY+1/7mRh7BLhlKV8L+iIgb9UCuGFf61i5Yc4l8/LqgNFsMb1KWU2wjtYVw/QAFnGv4gZC6B+Rem9RRNVOWiXmd1X7Z874dZBtUqUTfCXb9U3+ZzZ402xg4Uermq4yFLD9sezji8IYMZN/TRQbMZ5KxTGvgCGXNMZGcZkmqj3CIsL3/aWERMsYCZKe0tUODpQ6rRA8HxztUwQ0p3lXrX/1m8tE3VVh7W1kbkaEF9mfqJi2af/ItfK6dLPnR66XCQ2qWffL/TSVmRHLRi5w3d6AUhegDFPZS2UN0EcJY6VQi4LcrxYrQ0d8XmkLSRAYyOv5qfhDOeg=="
+	}
+}
+```
 
 **Example Consent Verifiable Credential (issued by a practitioner) for the health risk data**
 (will be added soon)
