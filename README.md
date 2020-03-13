@@ -24,7 +24,7 @@ Also please look at the various text with “call out to the community” on top
 
 In times of virus crisis (eg. corona) citizen’s will be “color coded” for their health condition regarding the infection status, but in a digital way, using smartphones.
 
-Practitioners and citizens will issue different types of health status situation reports. Those of practitioners will be be considered as more authoritative (eg. based on lab tests). Citizens’ messages are of a different (non-professional nature), but they can help in improving communication and that should get some weight as well.
+Practitioners and citizens will issue different types of health status situation reports. The messages of practitioners will be  considered as more authoritative (eg. based on lab tests). Citizens’ messages are of a different (non-professional nature), but they can help in improving communication and that should get some weight as well.
 
 Essential is that these health condition events/messages are temporary and should be destroyed when a new (updated) message that provides a more recent view on the situation. (TBD on what happens after x-time after a crisis. Automatic delete? User delete?) 
 The health condition events/messages are tied to a digital identity of the issuing party. In case of practitioners this should be tied to their professional credentials. All data exchanges are accompanied by a GDPR consent encoded as Verifiable Claim so that *legitimate use of the data can be proved.* **Anyone not being able to provide this proof will be in breach of GDPR law.**
@@ -32,9 +32,9 @@ The health condition events/messages are tied to a digital identity of the issui
 Health condition changes, so these health condition events/messages will be regularly updated and timestamping will determine which is most recent. For each latest health condition event, a barcode can be generated using a smartphone and this code can be read by a smartphone (app). No physical contacts are needed. These barcodes are destroyed (as they are only digital, this means that they will not resolve any information) when a new health condition event/message is created.
 
 Who gets what **benefit**? Color coding people on health conditions is just a prerequisite to generate data to solve a problem. The problem solved in this case looks like:
-a) Transparency of who is free of the virus for social situation (consumer view) or 
-b) Show a path of spreading the virus and predict who is going to be impacted next based on who was at which location or was in contact with whom? (B2C view for Govt to check scale of virus spread and plan mitigation) 
-c) There is a 3rd view for the healthcare provider to understand when a patient shows up with a symptom, to be able to make a decision (via an AI) whether this person should be given the expensive test kit over other patients who might be at higher risk from the virus. This is futuristic thinking - There may be value from the data trail that can be shared transparently across regions/countries to develop learning patterns for disease control/virus spreading contamination strategies.
+* Transparency of who is free of the virus for social situation (consumer view) or 
+* Show a path of spreading the virus and predict who is going to be impacted next based on who was at which location or was in contact with whom? (B2C view for Govt to check scale of virus spread and plan mitigation) 
+* There is a 3rd view for the healthcare provider to understand when a patient shows up with a symptom, to be able to make a decision (via an AI) whether this person should be given the expensive test kit over other patients who might be at higher risk from the virus. This is futuristic thinking - There may be value from the data trail that can be shared transparently across regions/countries to develop learning patterns for disease control/virus spreading contamination strategies.
 
 ## Technicalities
 
@@ -155,6 +155,9 @@ Markers: To be able to work with markers project will create it’s own open-sou
 **(Call out to the community of practitioners/health experts to provide the correct codes/taxonomies.** https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30557-2/fulltext, referencing ICTV as an authoritative source)
 
 **Example health risk message/report VC:**
+
+This message is created/issued by a practitioner:
+
 ```json
 {
 	"@context": [
@@ -169,7 +172,7 @@ Markers: To be able to work with markers project will create it’s own open-sou
 	"issuer": "did:BE:some-registered-practitioner-DID-0001",
 	"issuanceDate": "2020-01-23T05:28:04Z",
 	"credentialSubject": {
-		"id": "did:disposable:some-person-disposable-DID-001",
+		"id": "did:disposable:some-citizen-disposable-DID-001",
 		"publicHealthRiskType": "uri:ictv:SARS-CoV-2",
 		"riskSeverityLevel": "uri:TODO:green",
 		"illegibilityForTesting": "YES",
@@ -181,7 +184,7 @@ Markers: To be able to work with markers project will create it’s own open-sou
 	"proof": {
 		"type": "Ed25519Signature2018",
 		"created": "2020-01-23T05:30:04Z",
-		"creator": "did:disposable:some-person-disposable-DID-001#keys-1",
+		"creator": "did:BE:some-registered-practitioner-DID-0001#keys-1",
 		"signatureValue": "I9+XPel4g4NnYlY+1/7mRh7BLhlKV8L+iIgb9UCuGFf61i5Yc4l8/LqgNFsMb1KWU2wjtYVw/QAFnGv4gZC6B+Rem9RRNVOWiXmd1X7Z874dZBtUqUTfCXb9U3+ZzZ402xg4Uermq4yFLD9sezji8IYMZN/TRQbMZ5KxTGvgCGXNMZGcZkmqj3CIsL3/aWERMsYCZKe0tUODpQ6rRA8HxztUwQ0p3lXrX/1m8tE3VVh7W1kbkaEF9mfqJi2af/ItfK6dLPnR66XCQ2qWffL/TSVmRHLRi5w3d6AUhegDFPZS2UN0EcJY6VQi4LcrxYrQ0d8XmkLSRAYyOv5qfhDOeg=="
 	}
 }
@@ -190,6 +193,8 @@ Markers: To be able to work with markers project will create it’s own open-sou
 **Example Consent Verifiable Credential (issued by a practitioner) for the health risk data**
 
 See attribute “dataSubjectData” which contains a link to such public health risk message.
+
+This consent is created/issued by the citizen itself:
 
 ```json
 {
@@ -202,10 +207,10 @@ See attribute “dataSubjectData” which contains a link to such public health 
 		"VerifiableCredential",
 		"UsageConsentCredential"
 	],
-	"issuer": "did:BE:some-registered-practitioner-DID-0001",
+	"issuer": "did:disposable:some-citizen-disposable-DID-001",
 	"issuanceDate": "2020-01-23T05:28:04Z",
 	"credentialSubject": {
-		"id": "did:disposable:some-person-disposable-DID-001",
+		"id": "did:disposable:some-citizen-disposable-DID-001",
 		"consent": {
 			"controllerDID": "did:BE:some-registered-practitioner-DID-0001",
 			"jurisdiction": "urn:gdpr:jurisdiction:BE",
@@ -229,7 +234,7 @@ See attribute “dataSubjectData” which contains a link to such public health 
 	"proof": {
 		"type": "Ed25519Signature2018",
 		"created": "2020-01-23T05:30:04Z",
-		"creator": "did:disposable:some-person-disposable-DID-001#keys-1",
+		"creator": "did:disposable:some-citizen-disposable-DID-001#keys-1",
 		"signatureValue": "I9+XPel4g4NnYlY+1/7mRh7BLhlKV8L+iIgb9UCuGFf61i5Yc4l8/LqgNFsMb1KWU2wjtYVw/QAFnGv4gZC6B+Rem9RRNVOWiXmd1X7Z874dZBtUqUTfCXb9U3+ZzZ402xg4Uermq4yFLD9sezji8IYMZN/TRQbMZ5KxTGvgCGXNMZGcZkmqj3CIsL3/aWERMsYCZKe0tUODpQ6rRA8HxztUwQ0p3lXrX/1m8tE3VVh7W1kbkaEF9mfqJi2af/ItfK6dLPnR66XCQ2qWffL/TSVmRHLRi5w3d6AUhegDFPZS2UN0EcJY6VQi4LcrxYrQ0d8XmkLSRAYyOv5qfhDOeg=="
 	}
 }
@@ -247,6 +252,8 @@ See attribute “dataSubjectData” which contains a link to such public health 
 
 **Example citizens’ message VC:**
 
+This message is created/issued by the citizen:
+
 ```json
 {
 	"@context": [
@@ -258,10 +265,10 @@ See attribute “dataSubjectData” which contains a link to such public health 
 		"VerifiableCredential",
 		"CitizenHealthMessageCredential"
 	],
-	"issuer": "did:disposable:some-person-disposable-DID-001",
+	"issuer": "did:disposable:some-citizen-disposable-DID-001",
 	"issuanceDate": "2020-01-23T05:28:04Z",
 	"credentialSubject": {
-		"id": "did:disposable:some-person-disposable-DID-001",
+		"id": "did:disposable:some-citizen-disposable-DID-001",
 		"observedHealthStatus": "uri:TODO:couching",
 		"riskSeverityLevel": "uri:TODO:veryFrequent",
 		"locationOfIssuance": {
@@ -273,13 +280,15 @@ See attribute “dataSubjectData” which contains a link to such public health 
 	"proof": {
 		"type": "Ed25519Signature2018",
 		"created": "2020-01-23T05:30:04Z",
-		"creator": "did:disposable:some-person-disposable-DID-001#keys-1",
+		"creator": "did:disposable:some-citizen-disposable-DID-001#keys-1",
 		"signatureValue": "I9+XPel4g4NnYlY+1/7mRh7BLhlKV8L+iIgb9UCuGFf61i5Yc4l8/LqgNFsMb1KWU2wjtYVw/QAFnGv4gZC6B+Rem9RRNVOWiXmd1X7Z874dZBtUqUTfCXb9U3+ZzZ402xg4Uermq4yFLD9sezji8IYMZN/TRQbMZ5KxTGvgCGXNMZGcZkmqj3CIsL3/aWERMsYCZKe0tUODpQ6rRA8HxztUwQ0p3lXrX/1m8tE3VVh7W1kbkaEF9mfqJi2af/ItfK6dLPnR66XCQ2qWffL/TSVmRHLRi5w3d6AUhegDFPZS2UN0EcJY6VQi4LcrxYrQ0d8XmkLSRAYyOv5qfhDOeg=="
 	}
 }
 ```
 
 **Example Consent Verifiable Credential (self-issued by a citizen) for the health risk data to be used by government for crisis management purpose**
+
+This consent is created/issued by the citizen itself:
 
 ```json
 {
@@ -292,10 +301,10 @@ See attribute “dataSubjectData” which contains a link to such public health 
 		"VerifiableCredential",
 		"UsageConsentCredential"
 	],
-	"issuer": "did:disposable:some-person-disposable-DID-001",
+	"issuer": "did:disposable:some-citizen-disposable-DID-001",
 	"issuanceDate": "2020-01-23T05:28:04Z",
 	"credentialSubject": {
-		"id": "did:disposable:some-person-disposable-DID-001",
+		"id": "did:disposable:some-citizen-disposable-DID-001",
 		"consent": {
 			"controllerDID": "did:EU:some-government-DID-0001",
 			"jurisdiction": "urn:gdpr:jurisdiction:BE",
@@ -324,7 +333,7 @@ See attribute “dataSubjectData” which contains a link to such public health 
 	"proof": {
 		"type": "Ed25519Signature2018",
 		"created": "2020-01-23T05:30:04Z",
-		"creator": "did:disposable:some-person-disposable-DID-001#keys-1",
+		"creator": "did:disposable:some-citizen-disposable-DID-001#keys-1",
 		"signatureValue": "I9+XPel4g4NnYlY+1/7mRh7BLhlKV8L+iIgb9UCuGFf61i5Yc4l8/LqgNFsMb1KWU2wjtYVw/QAFnGv4gZC6B+Rem9RRNVOWiXmd1X7Z874dZBtUqUTfCXb9U3+ZzZ402xg4Uermq4yFLD9sezji8IYMZN/TRQbMZ5KxTGvgCGXNMZGcZkmqj3CIsL3/aWERMsYCZKe0tUODpQ6rRA8HxztUwQ0p3lXrX/1m8tE3VVh7W1kbkaEF9mfqJi2af/ItfK6dLPnR66XCQ2qWffL/TSVmRHLRi5w3d6AUhegDFPZS2UN0EcJY6VQi4LcrxYrQ0d8XmkLSRAYyOv5qfhDOeg=="
 	}
 }
