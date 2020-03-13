@@ -340,9 +340,9 @@ For example, if a person has been verified as healthy by authorities, backend da
 
 If disposable identity is lacking data or a person has travelled a lot in certain areas, markers would be displayed as compromised (center marker on following figure).
 
-If person has been ordered in guarantee or backend data estimates that person might be infected marker would display status as infected (most left marker on following figure)
+If person has been ordered in guarantee or backend data estimates that person might be infected marker would display status as infected (most left marker on following figure):
 
-(todo add images)
+![Colored barcodes](/color-barcodes.png)
 
 Future work with visual interface……. To react to bacteria in human tissues?
 
