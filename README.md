@@ -65,22 +65,22 @@ This schema minimizes risks of data leaks and unauthorized reuse of personal dat
 **Citizen’s app:** 
 To provide a warning about another citizen’s health condition (from a list of possible values to choose). Location coordinates are stored but only to be released under strict conditions to government/authorities (TBD use of Zero-Knowledge-Proofs for that).
 
-A citizen can use digital identification tools (such as Itsme) for self-identification.
+A citizen can use digital identification tools for self-identification. **In cooperation with a telco, a government "could" provide more identification information based on a citizens' phone number.**
 
 Crypto-keys are stored on the citizen’s app, all DIDs are derived from that. A persona DID is created from those crypto-keys. A disposable DID is derived from a persona DID. All these DIDs are stored on the citizens device.
-The citizens main identity Verifiable Credential is generated from e.g. the Itsme identity. This “main” identity is the citizens public persona.
+A (minimal) citizens main persona/public identity Verifiable Credential can be generated from information provided by a authority/government or could be generated entirely by an authority/government (or some agent working on behalf of them).(TBD which scenario to choose).
 
-The citizens app messages are self-issued Verifiable Credentials. With each message a GDPR consent is generated as a self-issued Verifiable Credential and this has a reference to the app health messages.
+The citizens app health messages are self-issued Verifiable Credentials including a Disposable DID. With each message a GDPR consent is generated as a second self-issued Verifiable Credential (which includes a reference to the app health message). Both are always exchanged as a bundle.
 
 **Practitioners app:**
 To provide a health message (including colored codes) with high value/importance.
 
-Practitioners login (e.g. using Itsme) for their main identity from which a public persona DID and a Verifiable Credential is generated that includes a link to their professional credentials (created by an authority/government, see next).
+Practitioners identification follows the same steps as with the citizens, with one important added element: the authority/goverment will also supply a professional Verifiable Credential that proofs the capability of the practitioner.
 
-Practitioners create the public health messages (as Verifiable Claims, see example).
+Practitioners create the public health messages (as Verifiable Claims, see example) referencing a Disposable DID of the citizen.
 
 **Government app:**
-To issue authoritative credentials for practitioners. These credentials are publicly available (registry/server) and directly linked to the practitioners’ main/public persona DID.
+To issue authoritative credentials for practitioners. These credentials should be publicly available (via a credential registry/server) and directly linked to the practitioners’ main/public persona DID.
 
 ### Government-supporting backends
 
@@ -89,11 +89,12 @@ A high-throughput message receiving endpoint, secure (hack-proof), …
 Ideally, an AI is running in a protected processor (secure enclave) that can decrypt and run algorithms on citizens’ health data and only is able to do that based on the consent of the citizen (see example consent messages). 
 _(TBD with authorities/government on details of this process, incl. handling of the output of the analysis, etc.)_
 
-**Lookup service for Government/authoritative Verified Credentials (for practitioner credentials):**
+**Lookup service for practitioner Verified Credentials:**
 A high-availability read-only lookup service that allows verification of Verified Credentials for the practitioners, issued by government/authority.
+(TBD if the same infrastructure can be used to create Verifiable Credentials for citizens (for basic identify information)).
 
 **Timestamping (blockchain?) service:**
-To be used (called) for creation of all time attributes within Verifiable Credentials. This is critical for purposes of time-ordering of events.
+To be used for creation of all time attributes within Verifiable Credentials. This is critical for purposes of time-ordering of events.
 
 ### App interactions
 Some essential criteria/principles:
@@ -110,10 +111,10 @@ Practitioner app generates a main persona DID and transfers this to the governme
 Government app creates a professional Verifiable Credential (VC) including the main persona DID of the practitioner and registers the VC on a government server. The government app transfers a link to this registered VC onto the practitioners app.
 
 **Citizens -> Practitioners:** 
-Citizens app generates a disposable DID and transfers this to the practitioners app.
+Citizens app generates a Disposable DID and transfers this to the practitioners app.
 
 **Practitioners -> Citizens:**
-Practitioners app generates a health condition report (a VC) including the citizens disposable DID and transfers this to the citizens app.
+Practitioners app generates a health condition report (a VC) including the citizens Disposable DID and transfers this to the citizens app.
 
 **Citizens -> Practitioners/Government:**
 Citizens app generates barcodes with information embedded about the latest health condition report. Practitioners/government apps can read the barcode. Practitioners cannot decrypt location data, the government can.
@@ -125,7 +126,7 @@ Citizens apps can share **voluntarily** the latest status information using the 
 (Other barcode sharing use cases TBD with larger community.)
 
 **Citizens -> Government:**
-A citizen app sends a health condition message/report to the government. The collected data is used by the government for risk management purposes, impact prediction (based on location data), etc.  
+A citizen app sends health condition messages/reports to the government. The collected data is used by the government for risk management purposes, impact prediction (based on location data), etc.  
 (From Andrea: Regular asymmetric encryption can be used.)
 
 ### Interaction diagrams
@@ -137,7 +138,6 @@ A citizen app sends a health condition message/report to the government. The col
 * iOS SDK for apps; (From Andrea) React Native code (Android and iOS) from Decode: https://github.com/DECODEproject/decode-app
 * (TBD OpenIntents Friedger Mufkes library for between apps communication?)
 * (TBD Chirp library for between apps communication using audio?)
-* Itsme SDK for apps
 * **(TBD - Call out to the community for a solution)** Registry/server for the authoritative credentials. (concern: performance/non-hackability)
 * **(TBD - Call out to the community for a solution)** Server/blockchain for timestamps.
 * **(TBD - Call out to the community for a solution)** Event/server for the reception of citizen health messages and for AI/analysis to government (for crisis mgt purpose only). (concern: security/performance/non-hackability) (e.g. IBM Z , https://www.ibm.com/it-infrastructure/z/hardware)
