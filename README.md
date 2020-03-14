@@ -3,6 +3,8 @@
 
 This is a flat (zero-hierarchy) project with self organizing trajectories.  If  particular fundraising  support  is  needed temporary leaders can stand up. We started Thursday March 12 2020. The community  can deliver on passion and good will in three months. With funding to pay salaries this can be brought down to 1 or 2.
 
+Contact: Rob van Kranenburg, rvk@theinternetofthings.eu or Jef van Bockryck jef@rezonanz.com
+
 It  will also be the focus for #iotday, April 9  (we are revamping iotday.org)
 
 Join our 
