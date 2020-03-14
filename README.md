@@ -63,7 +63,7 @@ This schema minimizes risks of data leaks and unauthorized reuse of personal dat
 ### Apps
 
 **Citizen’s app:** 
-To provide a warning about another citizen’s condition (from a list of possible values to choose) with lower value/importance. Location coordinates are stored but only to be released under strict conditions to government/authorities (TBD use of Zero-Knowledge-Proofs for that).
+To provide a warning about another citizen’s health condition (from a list of possible values to choose). Location coordinates are stored but only to be released under strict conditions to government/authorities (TBD use of Zero-Knowledge-Proofs for that).
 
 A citizen can use digital identification tools (such as Itsme) for self-identification.
 
