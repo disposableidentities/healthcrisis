@@ -85,11 +85,12 @@ To issue authoritative credentials for practitioners. These credentials are publ
 ### Government backends
 
 **Endpoint to deliver public health messages to government:**
-High-throughput message receiving endpoint, secure (hack-proof), …
-Ideally, an AI is running in a protected processor (secure enclave) that can decrypt and run algorithms on citizens’ data and only is able to do that based on the consent of the citizen (see example consent messages). 
+A high-throughput message receiving endpoint, secure (hack-proof), …
+Ideally, an AI is running in a protected processor (secure enclave) that can decrypt and run algorithms on citizens’ health data and only is able to do that based on the consent of the citizen (see example consent messages). 
+_(TBD with authorities/government on details of this process, incl. handling of the output of the analysis, etc.)_
 
 **Lookup service for Government/authoritative Verified Credentials (for practitioner credentials):**
-Read-only lookup service that allows verification of Verified Credentials for the practitioners, issued by government/authority.
+A high-availability read-only lookup service that allows verification of Verified Credentials for the practitioners, issued by government/authority.
 
 (Using OpenID - TBD)
 
@@ -97,6 +98,8 @@ Read-only lookup service that allows verification of Verified Credentials for th
 Some critical criteria:
 * Communication is P2P (app-2-app), except the practitioner credentials (they are public).
 * Data is stored in-app, except practitioner credentials (they are stored in a public registry). Stale/old data is deleted.
+* Data is encrypted.
+* Health messages and GDPR consents are always transmitted together (in one package).
 * Citizen data is only read by practitioners, not stored (equivalent of showing a piece of paper, but not copying it). _The important exception being the case for government data analysis, for crisis management purposes._
 
 **Practitioners -> Government:**
