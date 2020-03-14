@@ -19,6 +19,7 @@ Current team volunteers/members:
 * Lead Healthcare specialist:  Christoph Thuemmler 
 * Lead AI specialist? 
 * Lead Legal: Mantalena Kaili
+* Lead Scenario: Christian Nold
 
 *This project is related to the ongoing work on identity in NGI Forward @NGI4EU.*
 
