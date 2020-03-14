@@ -140,6 +140,7 @@ A citizen app sends a health condition message/report to the government. The col
 * **(TBD - Call out to the community for a solution)** Registry/server for the authoritative credentials. (concern: performance/non-hackability)
 * **(TBD - Call out to the community for a solution)** Server/blockchain for timestamps.
 * **(TBD - Call out to the community for a solution)** Event/server for the reception of citizen messages to government (for crisis mgt purpose only). (concern: security/performance/non-hackability) (e.g. IBM Z , https://www.ibm.com/it-infrastructure/z/hardware)
+* **(TBD - Call out to the community for a solution)** Secure mechanism for exchange of decryption keys (between citizens and government/authorities)
 * **(TBD - Call out to the community for a solution)** OpenId SDK (?)/eIDAS eID identification request API (?)
 * **(TBD - Call out to the community for a solution)** AI SDK/API ?
 * Markers: To be able to work with markers project will create it’s own open-source library which is able to a) create markers and b) decode data in markers. This library will be based on work on done in Horizon2020 funded TagItSmart project and use following opensource libraries:
