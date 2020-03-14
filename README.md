@@ -137,7 +137,7 @@ A citizen app sends a health condition message/report to the government. The col
 * Itsme SDK for apps
 * **(TBD - Call out to the community for a solution)** Registry/server for the authoritative credentials. (concern: performance/non-hackability)
 * **(TBD - Call out to the community for a solution)** Server/blockchain for timestamps.
-* **(TBD - Call out to the community for a solution)** Event/server for the reception of citizen messages to government (for crisis mgt purpose only). (concern: security/performance/non-hackability) (e.g. IBM Z , https://www.ibm.com/it-infrastructure/z/hardware)
+* **(TBD - Call out to the community for a solution)** Event/server for the reception of citizen health messages and for AI/analysis to government (for crisis mgt purpose only). (concern: security/performance/non-hackability) (e.g. IBM Z , https://www.ibm.com/it-infrastructure/z/hardware)
 * **(TBD - Call out to the community for a solution)** Secure mechanism/software (library) for exchange of decryption keys (between citizens and government/authorities)
 * **(TBD - Call out to the community for a solution)** OpenId SDK/eIDAS eID identification request API
 * **(TBD - Call out to the community for a solution)** AI SDK/API
