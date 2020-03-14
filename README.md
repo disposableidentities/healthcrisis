@@ -3,7 +3,7 @@
 
 This is a flat (zero-hierarchy) project with self organizing trajectories.  If  particular fundraising  support  is  needed temporary leaders can stand up. We started Thursday March 12 2020. The community  can deliver on passion and good will in three months. With funding to pay salaries this can be brought down to 1 or 2.
 
-Contact: Rob van Kranenburg, rvk@theinternetofthings.eu or Jef van Bockryck jef@rezonanz.com
+Contact: Rob van Kranenburg (rvk@theinternetofthings.eu) or Jef Vanbockryck (jef@rezonanz.com).
 
 It  will also be the focus for #iotday, April 9  (we are revamping iotday.org)
 
@@ -24,7 +24,7 @@ Current team volunteers/members:
 
 Also please look at the various text with “call out to the community” on topics where help is needed.
 
-## Quick use case description
+## Preliminary use case description
 
 In times of virus crisis (eg. corona) citizen’s will be “color coded” for their health condition regarding the infection status, but in a digital way, using smartphones.
 
@@ -40,9 +40,9 @@ Who gets what **benefit**? Color coding people on health conditions is just a pr
 * Show a path of spreading the virus and predict who is going to be impacted next based on who was at which location or was in contact with whom? (B2C view for Govt to check scale of virus spread and plan mitigation) 
 * There is a 3rd view for the healthcare provider to understand when a patient shows up with a symptom, to be able to make a decision (via an AI) whether this person should be given the expensive test kit over other patients who might be at higher risk from the virus. This is futuristic thinking - There may be value from the data trail that can be shared transparently across regions/countries to develop learning patterns for disease control/virus spreading contamination strategies.
 
-# Disposable Identity Definition
+## Disposable Identity Definition
 
-This definition is taking from the forthcoming publication: DISPOSABLE IDENTITIES?  Why digital identity matters to blockchain disintermediation and for society. Authors: Loretta Anania, EC Gaelle Le Gars, Rob van Kranenburg. The authors are linked to H2020 ICT Grant Agreement 825652 NGI FORWARD.
+This definition is taking from the forthcoming publication: "DISPOSABLE IDENTITIES?  Why digital identity matters to blockchain disintermediation and for society. Authors: Loretta Anania, EC Gaelle Le Gars, Rob van Kranenburg." The authors are linked to H2020 ICT Grant Agreement 825652 NGI FORWARD.
 
 Disposable identities are temporary attribute-based identities integrated in any smart contract between a receiver and a supplier. A digital context-based sharing of data that is generalizable: to apply a digital id internet layer to any existing communication service.
 
@@ -52,72 +52,73 @@ With disposable identities, new applications can be added to this ecosystem usin
 
 This schema minimizes risks of data leaks and unauthorized reuse of personal data by third party service providers. The proposed technical framework of provable computing developed by zenroom.org, runs on Virtual Machines embedded in the chip used with any personal communication device and any connected object . These chips representing the key material component of the approach, they could be regarded as the digital era equivalent of the secure ID of Passport and require comparable level of confidence in the fabrication process. This argues in favour of relying on chips manufactured under EU jurisdiction. While this represents a major change from the current supply chain for commercial chips which are almost entirely sourced from China for the EU market, it is also a move that may serve other geopolitical and environmental Commission priorities. Zenroom, which can also runs on existing integrated chips, was developed as European alternative for achieving a level of accessibility, provability and certification of computing.
 
-## Technicalities
+## Technical context
 
 ### Standards
 
 * W3C DID for key identity identifier for a persona ID and disposable ID: https://www.w3.org/TR/did-core/
-* W3C Verifiable Credential for Health Code and usage consent (purpose limitation-GDPR): https://www.w3.org/TR/vc-data-model/
-* Kantare Consent Receipt for the consent “content” (JSON Verifiable Claim translation, see example-link TODO): https://kantarainitiative.org/download/7902/
+* W3C Verifiable Credential for health messages and usage consent (purpose limitation-GDPR): https://www.w3.org/TR/vc-data-model/
+* Kantare Consent Receipt for the consent “content” (JSON Verifiable Claim translation, see examples): https://kantarainitiative.org/download/7902/
 
 ### Apps
 
 **Citizen’s app:** 
-To provide a warning about another citizen’s condition (from a list of possible values to choose) with lower value/importance. Location coordinates are stored but only to be released under stricter conditions to government/authorities (TBD to use ZKPs for that).
+To provide a warning about another citizen’s condition (from a list of possible values to choose) with lower value/importance. Location coordinates are stored but only to be released under strict conditions to government/authorities (TBD use of Zero-Knowledge-Proofs for that).
 
-A citizen can use Itsme for self-identification.
+A citizen can use digital identification tools (such as Itsme) for self-identification.
 
-Crypto keys are stored on the citizen’s app, all DIDs are derived from that. A persona DID is created from the main identity. A disposable DID is created from a persona DID. All these DIDs are stored on the citizens device.
-The citizens main identity Verifiable Credential is generated from the Itsme identity. This “main” identity is the citizens public persona.
+Crypto-keys are stored on the citizen’s app, all DIDs are derived from that. A persona DID is created from those crypto-keys. A disposable DID is derived from a persona DID. All these DIDs are stored on the citizens device.
+The citizens main identity Verifiable Credential is generated from e.g. the Itsme identity. This “main” identity is the citizens public persona.
 
-The citizens app messages are self-issued Verifiable Credentials. With each message a GDPR consent is generated as a self-issued Verifiable Credential and this has a reference to the app messages.
+The citizens app messages are self-issued Verifiable Credentials. With each message a GDPR consent is generated as a self-issued Verifiable Credential and this has a reference to the app health messages.
 
 **Practitioners app:**
-To provide a Health Code (colored codes) with high value/importance.
+To provide a health message (including colored codes) with high value/importance.
 
-Practitioners use Itsme for their main identity from which a public persona DID and a Verifiable Credential is generated that can include a link to their professional credentials (created by an authority/government, see next).
+Practitioners login (e.g. using Itsme) for their main identity from which a public persona DID and a Verifiable Credential is generated that includes a link to their professional credentials (created by an authority/government, see next).
 
-Practitioners create the public health message (as a Verifiable Claim, see example).
+Practitioners create the public health messages (as Verifiable Claims, see example).
 
 **Government app:**
-To issue authoritative credentials for practitioners. These credentials are publicly available (registry/server) and directly linked to the practitioners’ main DID.
+To issue authoritative credentials for practitioners. These credentials are publicly available (registry/server) and directly linked to the practitioners’ main/public persona DID.
 
 ### Government backends
 
 **Endpoint to deliver public health messages to government:**
 High-throughput message receiving endpoint, secure (hack-proof), …
-Ideally, an AI is running in a protected processor (secure enclave?) that can decrypt and run algorithms on citizens’ data and only is able to do that based on the consent of the citizen (see example consent messages). 
+Ideally, an AI is running in a protected processor (secure enclave) that can decrypt and run algorithms on citizens’ data and only is able to do that based on the consent of the citizen (see example consent messages). 
 
 **Lookup service for Government/authoritative Verified Credentials (for practitioner credentials):**
-Read-only lookup service that allows verification of Verified Credentials, issued by government/authority.
+Read-only lookup service that allows verification of Verified Credentials for the practitioners, issued by government/authority.
 
-(Other - OpenID …?)
+(Using OpenID - TBD)
 
 ### App interactions
 Some critical criteria:
-* Communication is P2P (app-2-app), except the practitioner credentials (they are public)
+* Communication is P2P (app-2-app), except the practitioner credentials (they are public).
 * Data is stored in-app, except practitioner credentials (they are stored in a public registry). Stale/old data is deleted.
-* Citizen data is only read by practitioners, not stored (equivalent of showing a piece of paper, but not copying it) (exception case for government if location data is needed for crisis management purposes)
+* Citizen data is only read by practitioners, not stored (equivalent of showing a piece of paper, but not copying it). _The important exception being the case for government data analysis, for crisis management purposes._
 
 **Practitioners -> Government:**
-Practitioner app generates a main DID and transfers this to the government.
+Practitioner app generates a main persona DID and transfers this to the government.
 
 **Government -> Practitioners:**
-Government app creates professional Verifiable Credential (VC) including the main DID of the practitioner and registers the VC on a government server. Government app provides a link to this registered item to the practitioners app.
+Government app creates a professional Verifiable Credential (VC) including the main persona DID of the practitioner and registers the VC on a government server. The government app transfers a link to this registered VC onto the practitioners app.
 
 **Citizens -> Practitioners:** 
 Citizens app generates a disposable DID and transfers this to the practitioners app.
 
 **Practitioners -> Citizens:**
-Practitioners app generates a health condition report (VC) including the citizens disposable DID and transfers this to the citizens app.
+Practitioners app generates a health condition report (a VC) including the citizens disposable DID and transfers this to the citizens app.
 
 **Citizens -> Practitioners/Government:**
-Citizens app generates barcodes with information embedded about the latest health condition report. Practitioners/Government apps can read the barcode. Practitioners cannot decrypt location data, the government can.
+Citizens app generates barcodes with information embedded about the latest health condition report. Practitioners/government apps can read the barcode. Practitioners cannot decrypt location data, the government can.
 
 (From Andrea: If you want to make location data (or any other data) readable only by some people, then you should use asymmetric encryption. You can use ZKP for example to sign/read a certificate issued by a hospital that states that "on day xyz, this person is YELLOW" where you verify the signature of the hospital and the signature of the person carrying the QR on their phone's app.)
 
 **Citizens -> Citizens:**
-Citizens apps can share voluntary latest status information using the barcode mechanism (eg. with close friends, family members, others who they trust).
+Citizens apps can share **voluntarily** the latest status information using the barcode mechanism (eg. with close friends, family members, others who they trust).
+(Other barcode sharing use cases TBD with larger community.)
 
 **Citizens -> Government:**
 A citizen app sends a health condition message/report to the government. The collected data is used by the government for risk management purposes, impact prediction (based on location data), etc.  
@@ -126,35 +127,21 @@ A citizen app sends a health condition message/report to the government. The col
 ### Interaction diagrams
 (TODO)
 
-### Technology
-
-Zenroom SDK for creation of DIDs, Verifiable Claims*, zero knowledge proofs. (*Requires an action from Zenroom to be compliant with the JSON format of W3C VC. Andrea offered help via Dyne.org) 
-
-Android SDK (initially) for apps.
-
-iOS SDK for apps
-
-(From Andrea) React Native code (Android and iOS) from Decode: https://github.com/DECODEproject/decode-app
-
-(TBD OpenIntents Friedger Mufkes library for between apps communication?)
-
-(TBD Chirp library for between apps communication using audio?)
-
-Itsme SDK for apps.
-
-**(TBD - Call out to the community for a solution)** Registry/server for the authoritative credentials. (concern: performance/non-hackability)
-
-**(TBD - Call out to the community for a solution)** Server/blockchain for timestamps.
-
-**(TBD - Call out to the community for a solution)** Event/server for the reception of citizen messages to government (for crisis mgt purpose only). (concern: security/performance/non-hackability) (e.g. IBM Z , https://www.ibm.com/it-infrastructure/z/hardware)
-
-**(TBD - Call out to the community for a solution)** OpenId SDK (?)/eIDAS eID identification request API (?)
-
-**(TBD - Call out to the community for a solution)** AI SDK/API ?
-
-Markers: To be able to work with markers project will create it’s own open-source library which is able to a) create markers and b) decode data in markers. This library will be based on work on done in Horizon2020 funded TagItSmart project and use following opensource libraries:
-* LibDtmx
-* OpenCV
+### Technology (preliminary list)
+* Zenroom SDK for creation of DIDs, Verifiable Claims*, zero knowledge proofs. (*Requires an action from Zenroom to be compliant with the JSON format of W3C VC. Andrea offered help via Dyne.org) 
+* Android SDK (initially) for apps.
+* iOS SDK for apps; (From Andrea) React Native code (Android and iOS) from Decode: https://github.com/DECODEproject/decode-app
+* (TBD OpenIntents Friedger Mufkes library for between apps communication?)
+* (TBD Chirp library for between apps communication using audio?)
+* Itsme SDK for apps
+* **(TBD - Call out to the community for a solution)** Registry/server for the authoritative credentials. (concern: performance/non-hackability)
+* **(TBD - Call out to the community for a solution)** Server/blockchain for timestamps.
+* **(TBD - Call out to the community for a solution)** Event/server for the reception of citizen messages to government (for crisis mgt purpose only). (concern: security/performance/non-hackability) (e.g. IBM Z , https://www.ibm.com/it-infrastructure/z/hardware)
+* **(TBD - Call out to the community for a solution)** OpenId SDK (?)/eIDAS eID identification request API (?)
+* **(TBD - Call out to the community for a solution)** AI SDK/API ?
+* Markers: To be able to work with markers project will create it’s own open-source library which is able to a) create markers and b) decode data in markers. This library will be based on work on done in Horizon2020 funded TagItSmart project and use following opensource libraries:
+  * LibDtmx
+  * OpenCV
 
 ## Information/data
 
@@ -357,15 +344,15 @@ This consent is created/issued by the citizen itself:
 
 ### Visual interface on identity
 
-Disposable identity would need to have visual interface for both human vision and machine vision. It should be clear to humans by just looking at the visual interface what is the status of identity by using color coding or other visual representation. This visual representation would have elements that would make it also straightforward for machine vision to read out contents.
+Disposable identity related information would need to have a visual interface for both human vision and machine vision. It should be clear to humans by just looking at the visual interface what is the status of identity-information by using color coding or other visual representation. This visual representation would have elements that would make it also straightforward for machine vision to read out contents.
 
-Our proposed representation of the visual interface would be a 2-dimensional marker like Datamatrix. In the proposed approach a standard Datamatrix would be extended to have more meta-information. This meta-information would contain data about the last update date of disposable identity as well as estimated status of person. Estimated status would be something that gives clear information if person is a) healthy, b) compromised or c) infected.
+Our proposed representation of the visual interface would be a 2-dimensional marker like Datamatrix. In the proposed approach a standard Datamatrix would be extended to have more meta-information. This meta-information would contain data about the last update date of disposable identity-information as well as estimated health status of person. Estimated health status would be something that gives clear information if person is a) healthy, b) compromised or c) infected.
 
-For example, if a person has been verified as healthy by authorities, backend data backs this up,  visual interface would display healthy status (most right marker in following figure). 
+For example, if a person has been verified as healthy by authorities, the backend data backs this up and the visual interface would display healthy status (most right marker in following figure). 
 
-If disposable identity is lacking data or a person has travelled a lot in certain areas, markers would be displayed as compromised (center marker on following figure).
+If disposable identity-information is lacking data or a person has travelled a lot in certain areas, markers would be displayed as compromised (center marker on following figure).
 
-If person has been ordered in guarantee or backend data estimates that person might be infected marker would display status as infected (most left marker on following figure):
+If a person has been ordered in guarantee or the backend data estimates that person might be infected, the marker would display the health status as infected (most left marker on following figure):
 
 ![Colored barcodes](/color-barcodes.png)
 
