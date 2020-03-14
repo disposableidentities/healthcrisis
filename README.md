@@ -82,7 +82,7 @@ Practitioners create the public health messages (as Verifiable Claims, see examp
 **Government app:**
 To issue authoritative credentials for practitioners. These credentials are publicly available (registry/server) and directly linked to the practitioners’ main/public persona DID.
 
-### Government backends
+### Government-supporting backends
 
 **Endpoint to deliver public health messages to government:**
 A high-throughput message receiving endpoint, secure (hack-proof), …
@@ -91,6 +91,9 @@ _(TBD with authorities/government on details of this process, incl. handling of 
 
 **Lookup service for Government/authoritative Verified Credentials (for practitioner credentials):**
 A high-availability read-only lookup service that allows verification of Verified Credentials for the practitioners, issued by government/authority.
+
+**Timestamping (blockchain?) service:**
+To be used (called) for creation of all time attributes within Verifiable Credentials. This is critical for purposes of time-ordering of events.
 
 ### App interactions
 Some essential criteria/principles:
