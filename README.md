@@ -3,7 +3,9 @@
 
 This is a flat (zero-hierarchy) project with self organizing trajectories.  If  particular fundraising  support  is  needed temporary leaders can stand up. We started Thursday March 12 2020. The community  can deliver on passion and good will in three months. With funding to pay salaries this can be brought down to 1 or 2.
 
-It  will also be the focus for #iotday (last  year 60 self  organised events globally)., April 9  (we are revamping iotday.org)
+It  will also be the focus for #iotday, April 9  (we are revamping iotday.org)
+
+Join our 
 Telegram Group Disposable Health ID (DHID)
 https://t.me/joinchat/PVV8JxfWegIq3SlFMuS1Gg
 
