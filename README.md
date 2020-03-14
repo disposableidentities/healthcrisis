@@ -22,7 +22,7 @@ Current team volunteers/members:
 
 *This project is related to the ongoing work on identity in NGI Forward @NGI4EU.*
 
-Also please look at the various text with “call out to the community” on topics where help is needed.
+**Please look at the various text with “call out to the community” on topics where help is needed.**
 
 ## Preliminary use case description
 
