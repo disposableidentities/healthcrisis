@@ -20,6 +20,7 @@ Current team volunteers/members:
 * Lead AI specialist? 
 * Lead Legal: Mantalena Kaili
 * Lead Scenario: Christian Nold
+* Lead Disruption: Claudia De Maesschalck
 
 *This project is related to the ongoing work on identity in NGI Forward @NGI4EU.*
 
