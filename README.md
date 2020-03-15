@@ -43,6 +43,20 @@ Who gets what **benefit**? Color coding people on health conditions is just a pr
 * Show a path of spreading the virus and predict who is going to be impacted next based on who was at which location or was in contact with whom? (B2C view for Govt to check scale of virus spread and plan mitigation) 
 * There is a 3rd view for the healthcare provider to understand when a patient shows up with a symptom, to be able to make a decision (via an AI) whether this person should be given the expensive test kit over other patients who might be at higher risk from the virus. This is futuristic thinking - There may be value from the data trail that can be shared transparently across regions/countries to develop learning patterns for disease control/virus spreading contamination strategies.
 
+# Digital applications keep the community healthy and active during and after an epidemic 
+David Li, Lead Shanghai Good Practice Work package (Open Innovation Lab Shenzhen) 
+
+For the past two months, China has struggled with COVID-19 epidemic and many measurements being deployed to bring it under control. While significant actions such as locking down of the city of Wuhan of 11 million people and even the province of Hebei of 60 million are getting a lot of attention, many of the digital innovations are not well covered beyond the simple narrative of surveillance and privacy invasion. However, at the time of the epidemic, the collection of the digital data and the application of the digital technologies provide the communities and citizens a better understanding of the extend of the outbreak and the government the better information to deploy the limited resources. Some of the applications are documented here as references to consider how they may be better implemented for different culture and social context. 
+Case map integrating with location history
+The government has made the location of all outbreak cases and locations they visited available to third party app developers so they can be integrated with maps to help the citizens to assess their potential exposures to the outbreak. 
+A more advanced version of the map was provided by the telecom operators which keep records of AGPS and cell tower connectivities of all of their subscribers. The app matching one's locations history to the latest know trouble spots to keep the user informed whether or not they may have crosses these trouble spots. 
+Traveling registration 
+Everyone is required to register before traveling out of the city which is implemented as an online app for the user to fill and checked against their traveling history to validate the content. This has helped to speed up the process as well as avoiding the potential transmission with the paper medium. 
+Health Code
+As the epidemic slows down, the new health code is introduced for public spaces like office buildings or shopping malls or public transportation to secure the areas for public health. 
+Privacy vs. public health 
+These services have proven to be useful in China to curb the epidemic and enable a rapid and orderly recovery. However, as the quick implementation in China tied directly to a phone number or Wechat/Alipay account, it has severe implications for the privacy and personal data. The State Council has issued a guideline on the use of the data and sharing of the data between organizations to be restricted to only the application of epidemic control.
+
 ## Disposable Identity Definition
 
 This definition is taking from the forthcoming publication: "DISPOSABLE IDENTITIES?  Why digital identity matters to blockchain disintermediation and for society. Authors: Loretta Anania, EC Gaelle Le Gars, Rob van Kranenburg." The authors are linked to H2020 ICT Grant Agreement 825652 NGI FORWARD.
