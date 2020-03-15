@@ -21,6 +21,7 @@ Current team volunteers/members:
 * Lead Legal: Mantalena Kaili
 * Lead Scenario: Christian Nold
 * Lead Disruption: Claudia De Maesschalck
+* Lead Shanghai Good Practice: David Li
 
 *This project is related to the ongoing work on identity in NGI Forward @NGI4EU.*
 
