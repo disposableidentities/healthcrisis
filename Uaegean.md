@@ -1,4 +1,3 @@
-# Objectives
 Pilot a health observation policy-case that serves the needs of efficiently managing people in conditions of health crises.
 The case should implement the specific, eventually “restrictive”, government policy applied in conditions of a public health
 crisis (such as the current COVID-19 crisis), while at the same time respecting the strict European personal data privacy requirements,
