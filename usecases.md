@@ -48,7 +48,7 @@ Our solution will provide a framework for transparently and anonymously observin
 
 ## Use-Case 5: Personal e-wallet for Health Crises
 
-“Assist citizens to navigate anonymously in health crises” 
+*“Assist citizens to navigate anonymously in health crises”*
 
 In times of health crisis, citizens benefit from a mobile app (in the form of a personal e-wallet) that can keep them informed of the latest health strategies, helping them recognise a infection risks based on past encounters and location history, assisting officials in issuing health status credentials as well as storing these credentials and prove ownership over them. 
 
@@ -65,5 +65,4 @@ It is dynamic, since the user’s health status and location are time-stamped an
 
 *Alice is at home and does not present any symptoms. Her phone buzzes and she is informed that based on an analysis of her location history she might be already infected, and her health status has been altered to “orange”. The analysis took place completely anonymously without any information other than Alice's location history being leaked to the system. Alice is advised to stay home for a predefined time period and to seek medical assistance if she develops any symptoms.* 
 
-Authors of these Use-Cases:
-Jari Isohanni, Rob van Kranenburg, Jef Vanbockryck, Christian Nold, Mirko Ross
+**Authors of these Use-Cases:Jari Isohanni, Rob van Kranenburg, Jef Vanbockryck, Christian Nold, Mirko Ross**
