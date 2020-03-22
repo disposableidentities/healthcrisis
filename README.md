@@ -29,6 +29,8 @@ Current team volunteers/members:
 
 ## Preliminary use case description
 
+**Detailed usecases here:** https://github.com/disposableidentities/healthcrisis/edit/master/usecases.md
+
 In times of virus crisis (eg. corona) citizen’s will be “color coded” for their health condition regarding the infection status, but in a digital way, using smartphones.
 
 Practitioners and citizens will issue different types of health status situation reports. The messages of practitioners will be  considered as more authoritative (eg. based on lab tests). Citizens’ messages are of a different (non-professional nature), but they can help in improving communication and that should get some weight as well.
