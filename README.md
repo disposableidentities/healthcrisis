@@ -14,10 +14,12 @@ https://t.me/joinchat/PVV8JxfWegIq3SlFMuS1Gg
 Current team volunteers/members:
 * Lead Architect Disposable Identity Team: Jef Vanbockryck
 * Lead Architect NextGenIdentity WG: Petros Kavassalis
-* Ecosystem Disposable Identity Team: Rob van Kranenburg and Gaëlle Le Gars 
 * Lead Architect Visual Interface: Jari Isohanni
+* Lead Cryptographer: Denis "Jaromil" Roio
+* Lead SDK Developer: Friedger Müfke
+* Ecosystem Disposable Identity Team: Rob van Kranenburg and Gaëlle Le Gars 
 * Lead Healthcare specialist:  Christoph Thuemmler 
-* Lead AI specialist? 
+* Lead AI specialist: TBD 
 * Lead Legal: Mantalena Kaili
 * Lead Scenario: Christian Nold
 * Lead Disruption: Claudia De Maesschalck
@@ -83,9 +85,10 @@ This schema minimizes risks of data leaks and unauthorized reuse of personal dat
 
 ### Standards
 
-* W3C DID for key identity identifier for a persona ID and disposable ID: https://www.w3.org/TR/did-core/
+* W3C DID for Main DID and Disposable DID: https://www.w3.org/TR/did-core/
 * W3C Verifiable Credential for health messages and usage consent (purpose limitation-GDPR): https://www.w3.org/TR/vc-data-model/
 * Kantare Consent Receipt for the consent “content” (JSON Verifiable Claim translation, see examples): https://kantarainitiative.org/download/7902/
+* BIP32 for Hierarchical Deterministic Wallets for generation of Disposable ID DIDs: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
 
 ### Apps
 
@@ -159,21 +162,26 @@ A citizen app sends health condition messages/reports to the government. The col
 ### Interaction diagrams
 (TODO)
 
-### Technology (preliminary list)
-* Zenroom SDK for creation of DIDs, Verifiable Claims*, zero knowledge proofs. (*Requires an action from Zenroom to be compliant with the JSON format of W3C VC. Andrea offered help via Dyne.org) 
-* Android SDK (initially) for apps.
-* iOS SDK for apps; (From Andrea) React Native code (Android and iOS) from Decode: https://github.com/DECODEproject/decode-app
-* (TBD OpenIntents Friedger Mufkes library for between apps communication?)
-* (TBD Chirp library for between apps communication using audio?)
+### Technology for the Disposable ID Mobile SDK (preliminary list)
+* [Zenroom VM](https://zenroom.org) for cryptographic creation, manipulation and verification of DIDs, Verifiable Claims (*) and zero knowledge proofs on all targeted platforms, including iOS and Android native and browser-based WASM.
+(Requires an action from Zenroom to be compliant with the JSON format of W3C DID (Documents) and W3C Verifiable Claims - see specific links in "Standards" section.) 
+* [DECODE APP](https://github.com/DECODEproject/decode-app) template for React-Native portable mobile app
+* Kotlin for native and Javascript Mobile SDK
+* React-Native for Mobile SDK
+* OpenIntents (Friedger Mufkes library for between apps communication)
+* Markers: To be able to work with markers project will create it’s own open-source library which is able to a) create markers and b) decode data in markers. This library will be based on work on done in Horizon2020 funded TagItSmart project and use following opensource libraries:
+  * LibDtmx
+  * OpenCV
+* AI SDK/API, https://github.com/Tribler/distributed-ai-kernel, by the team of https://www.blockchain-lab.org/
+
+### Technology for the Disposable ID APIs (preliminary list)
 * **(TBD - Call out to the community for a solution)** Registry/server for the authoritative credentials. (concern: performance/non-hackability)
 * **(TBD - Call out to the community for a solution)** Server/blockchain for timestamps.
 * **(TBD - Call out to the community for a solution)** Event/server for the reception of citizen health messages and for AI/analysis to government (for crisis mgt purpose only). (concern: security/performance/non-hackability) (e.g. IBM Z , https://www.ibm.com/it-infrastructure/z/hardware)
 * **(TBD - Call out to the community for a solution)** Secure mechanism/software (library) for exchange of decryption keys (between citizens and government/authorities)
 * **(TBD - Call out to the community for a solution)** OpenId SDK/eIDAS eID identification request API
-* AI SDK/API, https://github.com/Tribler/distributed-ai-kernel, by the team of https://www.blockchain-lab.org/
-* Markers: To be able to work with markers project will create it’s own open-source library which is able to a) create markers and b) decode data in markers. This library will be based on work on done in Horizon2020 funded TagItSmart project and use following opensource libraries:
-  * LibDtmx
-  * OpenCV
+
+
 
 ## Information/data
 
