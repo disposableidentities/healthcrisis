@@ -1,6 +1,6 @@
-# Disposable Yet Official Identities (DYOIs)
-## For a Democratic and Privacy Protecting Health Status and Location Observation Facility
-Sub-title: Disposable Yet Official Identities for public health protection, monitoring and prevention of epidemics spread under the constraints of transparency, data privacy and GDPR rights
+# For a Democratic and Privacy Protecting Health Status and Location Observation Facility
+ Disposable Yet Official Identities for public health protection, monitoring and prevention of epidemics spread under the constraints of transparency, data privacy and GDPR rights
+ 
 Short Description: A health observation policy case to serve the needs of efficiently managing people in conditions of health crises under the constraints of privacy and anonymity
 
 By the University of the Aegean | i4m Lab (contact e-mail: pkavassalis@aegean.gr)
