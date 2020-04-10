@@ -83,7 +83,7 @@ This schema minimizes risks of data leaks and unauthorized reuse of personal dat
 
 ## Technical context
 
-### Standards
+### Standards/leading specifications
 
 * W3C DID for Main DID and Disposable DID: https://www.w3.org/TR/did-core/
 * W3C Verifiable Credential for health messages and usage consent (purpose limitation-GDPR): https://www.w3.org/TR/vc-data-model/
@@ -91,6 +91,8 @@ This schema minimizes risks of data leaks and unauthorized reuse of personal dat
 * BIP32 for Hierarchical Deterministic Wallets for generation of Disposable ID DIDs: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
 * Peer DID specification, as one type of Disposable DID: https://openssi.github.io/peer-did-method-spec/
 * DID Exchange Protocol 1.0: https://github.com/hyperledger/aries-rfcs/blob/master/features/0023-did-exchange/README.md
+* Coconut credentials: https://arxiv.org/pdf/1802.07344.pdf
+* Decentralized Privacy-Preserving Proximity Tracing: https://github.com/DP-3T/documents
 
 ### Apps
 
