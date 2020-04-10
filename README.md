@@ -89,18 +89,20 @@ This schema minimizes risks of data leaks and unauthorized reuse of personal dat
 * W3C Verifiable Credential for health messages and usage consent (purpose limitation-GDPR): https://www.w3.org/TR/vc-data-model/
 * Kantare Consent Receipt for the consent “content” (JSON Verifiable Claim translation, see examples): https://kantarainitiative.org/download/7902/
 * BIP32 for Hierarchical Deterministic Wallets for generation of Disposable ID DIDs: https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
+* Peer DID specification, as one type of Disposable DID: https://openssi.github.io/peer-did-method-spec/
+* DID Exchange Protocol 1.0: https://github.com/hyperledger/aries-rfcs/blob/master/features/0023-did-exchange/README.md
 
 ### Apps
 
 **Citizen’s app:** 
-To provide a warning about another citizen’s health condition (from a list of possible values to choose). Location coordinates are stored but only to be released under strict conditions to government/authorities (TBD use of Zero-Knowledge-Proofs for that).
+To provide a warning about another citizen’s health condition (from a list of possible values to choose). Location coordinates/geo-grids are stored but only to be released under strict conditions to government/authorities (TBD use of Zero-Knowledge-Proofs for that).
 
 A citizen can use digital identification tools for self-identification. **In cooperation with a telco, a government "could" provide more identification information based on a citizens' phone number.**
 
 Crypto-keys are stored on the citizen’s app, all DIDs are derived from that. A persona DID is created from those crypto-keys. A disposable DID is derived from a persona DID. All these DIDs are stored on the citizens device.
 A (minimal) citizens main persona/public identity Verifiable Credential can be generated from information provided by a authority/government or could be generated entirely by an authority/government (or some agent working on behalf of them).(TBD which scenario to choose).
 
-The citizens app health messages are self-issued Verifiable Credentials including a Disposable DID. With each message a GDPR consent is generated as a second self-issued Verifiable Credential (which includes a reference to the app health message). Both are always exchanged as a bundle.
+The citizens app health messages are self-issued Verifiable Credentials including a Disposable DID. With each message a GDPR-based authorisation (incl. consent) is generated as a second self-issued Verifiable Credential (which includes a reference to the app health message). Both are always exchanged as a bundle.
 
 **Practitioners app:**
 To provide a health message (including colored codes) with high value/importance.
@@ -125,6 +127,17 @@ A high-availability read-only lookup service that allows verification of Verifie
 
 **Timestamping (blockchain?) service:**
 To be used for creation of all time attributes within Verifiable Credentials. This is critical for purposes of time-ordering of events.
+
+**Custodian service:**
+To be used for the backup and restore of private keys of individuals.
+
+### App-supporting backends
+
+**Private and personal distributed digital ledger:**
+To be used for the immutable persistence and anchoring of private personal identifiers.
+
+**Private and personal distributed data storage:**
+To be used for the storage of private personal data.
 
 ### App interactions
 Some essential criteria/principles:
@@ -168,19 +181,16 @@ A citizen app sends health condition messages/reports to the government. The col
 * [DECODE APP](https://github.com/DECODEproject/decode-app) template for React-Native portable mobile app
 * Kotlin for native and Javascript Mobile SDK
 * React-Native for Mobile SDK
-* OpenIntents (Friedger Mufkes library for between apps communication)
 * Markers: To be able to work with markers project will create it’s own open-source library which is able to a) create markers and b) decode data in markers. This library will be based on work on done in Horizon2020 funded TagItSmart project and use following opensource libraries:
   * LibDtmx
   * OpenCV
-* AI SDK/API, https://github.com/Tribler/distributed-ai-kernel, by the team of https://www.blockchain-lab.org/
+* (Under consideration) AI SDK/API, https://github.com/Tribler/distributed-ai-kernel, by the team of https://www.blockchain-lab.org/
 
 ### Technology for the Disposable ID APIs (preliminary list)
 * **(TBD - Call out to the community for a solution)** Registry/server for the authoritative credentials. (concern: performance/non-hackability)
-* **(TBD - Call out to the community for a solution)** Server/blockchain for timestamps.
-* **(TBD - Call out to the community for a solution)** Event/server for the reception of citizen health messages and for AI/analysis to government (for crisis mgt purpose only). (concern: security/performance/non-hackability) (e.g. IBM Z , https://www.ibm.com/it-infrastructure/z/hardware)
-* **(TBD - Call out to the community for a solution)** Secure mechanism/software (library) for exchange of decryption keys (between citizens and government/authorities)
+* **(TBD - Call out to the community for a solution)** Server/blockchain for timestamps, private/personal distributed ledgers for anchoring of private identifiers (e.g. Tupelo)
+* **(TBD - Call out to the community for a solution)** P2P distributed messaging for the exchange of citizen health messages and for AI/analysis to government (for crisis mgt purpose only) and between individuals (e.g. Matrix, Nym)
 * **(TBD - Call out to the community for a solution)** OpenId SDK/eIDAS eID identification request API
-
 
 
 ## Information/data
